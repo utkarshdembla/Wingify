@@ -1,9 +1,9 @@
-package org.RestWebApi.Database;
+package org.RestWebApi.database;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.RestWebApi.Modal.Product;
+import org.RestWebApi.modal.Product;
 
 public class ProductDatabase {
 

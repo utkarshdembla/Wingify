@@ -1,4 +1,5 @@
-package org.RestWebApi.Modal;
+package org.RestWebApi.modal;
+
 
 public class Product {
 

@@ -1,7 +1,8 @@
-package org.RestWebApi.Modal;
+package org.RestWebApi.modal;
 
 public class UserAuth {
 
+	
 	private String username;
 	private String password;
 	
@@ -12,10 +13,10 @@ public class UserAuth {
 	
 	public UserAuth(String username,String password)
 	{
+		
 		this.username=username;
 		this.password=password;
 	}
-	
 	
 	public String getUsername() {
 		return username;

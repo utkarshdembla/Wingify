@@ -1,7 +1,8 @@
-package org.RestWebApi.Resource;
+package org.RestWebApi.resource;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import javax.ws.rs.container.ContainerRequestContext;
@@ -9,6 +10,8 @@ import javax.ws.rs.container.ContainerRequestFilter;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 
+import org.RestWebApi.modal.UserAuth;
+import org.RestWebApi.service.UserAuthService;
 import org.glassfish.jersey.internal.util.Base64;
 
 @Provider
@@ -20,6 +23,9 @@ public class SecurityFilter implements ContainerRequestFilter {
 	
 	@Override
 	public void filter(ContainerRequestContext requestContext) throws IOException {
+	
+		UserAuthService userAuthService=new UserAuthService();
+		Map<String,String> userMap=userAuthService.getInfo();
 		
 		if(requestContext.getUriInfo().getPath().contains(SECURED_URL_PREFIX))
 		{
@@ -34,10 +40,15 @@ public class SecurityFilter implements ContainerRequestFilter {
 			String username=tokenizer.nextToken();
 			String password=tokenizer.nextToken();
 			
-			if("user".equals(username) && "password".equals(password))
+			
+			if(userMap.containsKey(username))
 			{
-				return;
+				if(userMap.get(username).equals(password))
+				{
+					return;
+				}
 			}
+			
 			
 			Response unauthorizedStatus=Response.status(Response.Status.UNAUTHORIZED).entity("User is not authorized").build();
 			requestContext.abortWith(unauthorizedStatus);

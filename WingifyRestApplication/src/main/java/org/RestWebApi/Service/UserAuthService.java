@@ -1,17 +1,18 @@
-package org.RestWebApi.Service;
+package org.RestWebApi.service;
 
 import java.util.Map;
 
-import org.RestWebApi.Database.UserAuthDatabase;
-import org.RestWebApi.Modal.UserAuth;
+import org.RestWebApi.database.UserAuthDatabase;
+import org.RestWebApi.modal.UserAuth;
 
 public class UserAuthService {
 
-	private Map<Long,UserAuth> userMap = UserAuthDatabase.getAllUsers();
+	private Map<String,String> userMap = UserAuthDatabase.getAllUsers();
 	
-	public Map<Long,UserAuth> getInfo()
+	public Map<String,String> getInfo()
 	{
-		userMap.put(1L, new UserAuth("user","password"));
+		userMap.put("user","password");
+		userMap.put("utkarsh", "wingify");
 		
 		return userMap;
 	}

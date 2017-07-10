@@ -1,15 +1,14 @@
-package org.RestWebApi.Database;
+package org.RestWebApi.database;
 
 import java.util.HashMap;
 import java.util.Map;
 
-
-import org.RestWebApi.Modal.UserAuth;
+import org.RestWebApi.modal.UserAuth;
 
 public class UserAuthDatabase {
-private static Map<Long,UserAuth> userAuth=new HashMap<>();
+private static Map<String,String> userAuth=new HashMap<>();
 	
-	public static Map<Long,UserAuth> getAllUsers()
+	public static Map<String,String> getAllUsers()
 	{
 		return userAuth;
 	}

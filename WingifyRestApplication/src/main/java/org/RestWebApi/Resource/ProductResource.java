@@ -1,4 +1,4 @@
-package org.RestWebApi.Resource;
+package org.RestWebApi.resource;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
-import org.RestWebApi.Modal.Product;
-import org.RestWebApi.Service.ProductService;
+import org.RestWebApi.modal.Product;
+import org.RestWebApi.service.ProductService;
 
 @Path("/secured")
 @Consumes(MediaType.APPLICATION_JSON)

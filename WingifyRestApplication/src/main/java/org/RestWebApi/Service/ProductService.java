@@ -1,11 +1,11 @@
-package org.RestWebApi.Service;
+package org.RestWebApi.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.RestWebApi.Database.ProductDatabase;
-import org.RestWebApi.Modal.Product;
+import org.RestWebApi.database.ProductDatabase;
+import org.RestWebApi.modal.Product;
 
 public class ProductService {
 
